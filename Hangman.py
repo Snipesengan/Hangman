@@ -5,7 +5,11 @@ def display(lives, hangman = [], missedGuess = [], guessString = []):
     os.system('clear || cls')  #For Linux/OS X
     print("Lives: ", lives)
     print(''.join([char if (char == ' ' or char == '\n' or (int(char) < (10 - lives))) else ' ' for char in hangman])) #prints the hangman base on how many life is left.
+<<<<<<< HEAD
     print("Inccorect guess: " , ','.join(missedGuess))
+=======
+    print("Incorrect guess: " , ','.join(missedGuess))
+>>>>>>> 1fa3b501741d8e6657b2183a7ac9bb46c31cd4ce
     print(' '.join(guessString))
 
 dictionary = open("dictionary.txt").read().split("\n")
@@ -36,8 +40,14 @@ lives = 10
 display(lives, hangman, missedGuess, guessString)
 while lives > 0 and '_' in guessString:
     guess = input('Enter guess: ').lower()
+<<<<<<< HEAD
 
     if (guess.isalpha()) and (not guess in missedGuess):
+=======
+
+    if (guess.isalpha()) and (not guess in missedGuess):
+
+>>>>>>> 1fa3b501741d8e6657b2183a7ac9bb46c31cd4ce
         if guess == word: #Correct Guess
             guessString = word
         elif len(guess) == 1 and guess in word: #Correct Guess
